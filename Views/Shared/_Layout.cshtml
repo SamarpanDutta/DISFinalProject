@@ -1,0 +1,77 @@
+﻿<!--Your HTML code here-->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>@ViewData["Title"] - NPSDE</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="@Url.Content("~/css/materialize.min.css")" media="screen,projection" />
+    <link rel="stylesheet" href="@Url.Content("~/css/site.css")" />
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo hide-on-med-and-down" style="padding-left:1cm;">National Park Service Data Exploration</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a asp-controller="Home" asp-action="Index"><i class="material-icons left">home</i></a></li>
+                    <li><a asp-controller="Home" asp-action="Create">Create New</a></li>
+                    <li><a asp-controller="Home" asp-action="Search"><i class="material-icons left">search</i>Search Park</a></li>
+                    <li><a asp-controller="Home" asp-action="Explore">Explore the Data</a></li>
+                    <li><a asp-controller="Home" asp-action="Model">Data Model</a></li>
+                </ul>
+            </div>
+        </nav>
+        <ul class="sidenav" id="mobile-demo">
+            <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+            <li><a asp-controller="Home" asp-action="Create">Create New</a></li>
+            <li><a asp-controller="Home" asp-action="Search">Search Park</a></li>
+            <li><a asp-controller="Home" asp-action="Explore">Explore the Data</a></li>
+            <li><a asp-controller="Home" asp-action="Model">Data Model</a></li>
+        </ul>
+    </header>
+
+    <main>
+        @RenderBody()
+    </main>
+
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Acknowledgement</h5>
+                    <p class="grey-text text-lighten-4">
+                        This is demo website built as a part of class project for the course <b>ISM6225 Distributed Information Systems</b>.
+                        Our sincerest gratitude to <b>Dr. Manish Agarwal</b> for enriching us with all the knowledge to develop this.
+                    </p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Here We Are!</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" asp-controller="Home" asp-action="Aboutus">About Us</a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://www.usf.edu">Visit USF</a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://www.usf.edu/business/schools/information-systems-management/">Visit School of ISM</a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://github.com/SamarpanDutta/Assignment_LookAndFeel">Find This Project on GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container" style="text-align: center;">
+                <span>
+                    © 2021 Copyright Text
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="@Url.Content("~/js/jquery-3.6.0.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/js/materialize.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/js/site.js")"></script>
+</body>
+</html>
