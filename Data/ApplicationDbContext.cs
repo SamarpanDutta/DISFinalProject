@@ -17,7 +17,8 @@ namespace DISFinalProject.Data
         public DbSet<Topic> Topics { get; set; }
         public DbSet<ParkActivity> ParkActivities { get; set; }
         public DbSet<ParkTopic> ParkTopics { get; set; }
-
+        public DbSet<State> States { get; set; }
+        public DbSet<StatePark> StateParks { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<ParkActivity>()

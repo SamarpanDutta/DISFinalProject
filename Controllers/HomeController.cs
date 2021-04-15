@@ -22,32 +22,5 @@ namespace DISFinalProject.Controllers
         {
             return View();
         }
-
-        public IActionResult Create()
-        {
-            return View();
-        }
-
-        public IActionResult Explore()
-        {
-            return View();
-        }
-
-        public IActionResult Aboutus()
-        {
-            return View();
-        }
-        public IActionResult Model()
-        {
-            return View();
-        }
-        public IActionResult Search()
-        {
-            return View();
-        }
-        public IActionResult Thanks()
-        {
-            return View();
-        }
     }
 }

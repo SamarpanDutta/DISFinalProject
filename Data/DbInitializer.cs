@@ -2,7 +2,7 @@
 using DISFinalProject.Models;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+using Newtonsoft.Json.Linq; 
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,18 +14,92 @@ namespace DISFinalProject.Data
     public static class DbInitializer
     {
         static HttpClient httpClient;
-        static string BASE_URL = "https://developer.nps.gov/api/v1/";
+        static string BASE_URL = "https://developer.nps.gov/api/v1";
         static string API_KEY = "2tS2OFbpx613f4rFH61hm1KlduyObzOhyLVBXwBh"; 
         public static void Initialize(ApplicationDbContext context)
         {
             context.Database.EnsureCreated();
+            getStates(context);
             getTopics(context);
             getActivities(context);
             getParks(context);
         }
-        public static void getParks(ApplicationDbContext context)
+
+        public static void getStates(ApplicationDbContext context)
         {
             context.Database.EnsureCreated();
+            State[] stlist = new State[]
+            {
+                new State{ID="AL",name="Alabama"},
+                new State{ID="AK",name="Alaska"},
+                new State{ID="AZ",name="Arizona"},
+                new State{ID="AR",name="Arkansas"},
+                new State{ID="CA",name="California"},
+                new State{ID="CO",name="Colorado"},
+                new State{ID="DE",name="Delaware"},
+                new State{ID="DC",name="District of Columbia"},
+                new State{ID="FL",name="Florida"},
+                new State{ID="GA",name="Georgia"},
+                new State{ID="HI",name="Hawaii"},
+                new State{ID="ID",name="Idaho"},
+                new State{ID="IL",name="Illinois"},
+                new State{ID="IN",name="Indiana"},
+                new State{ID="IA",name="Iowa"},
+                new State{ID="KS",name="Kansas"},
+                new State{ID="KY",name="Kentucky"},
+                new State{ID="LA",name="Louisiana"},
+                new State{ID="ME",name="Maine"},
+                new State{ID="MD",name="Maryland"},
+                new State{ID="MA",name="Massachusetts"},
+                new State{ID="MI",name="Michigan"},
+                new State{ID="MN",name="Minnesota"},
+                new State{ID="MS",name="Mississippi"},
+                new State{ID="MO",name="Missouri"},
+                new State{ID="MT",name="Montana"},
+                new State{ID="NE",name="Nebraska"},
+                new State{ID="NV",name="Nevada"},
+                new State{ID="NH",name="New Hampshire"},
+                new State{ID="NJ",name="New Jersey"},
+                new State{ID="NM",name="New Mexico"},
+                new State{ID="NY",name="New York"},
+                new State{ID="NC",name="North Carolina"},
+                new State{ID="ND",name="North Dakota"},
+                new State{ID="OH",name="Ohio"},
+                new State{ID="OK",name="Oklahoma"},
+                new State{ID="OR",name="Oregon"},
+                new State{ID="PA",name="Pennsylvania"},
+                new State{ID="RI",name="Rhode Island"},
+                new State{ID="SC",name="South Carolina"},
+                new State{ID="SD",name="South Dakota"},
+                new State{ID="TN",name="Tennessee"},
+                new State{ID="TX",name="Texas"},
+                new State{ID="UT",name="Utah"},
+                new State{ID="VT",name="Vermont"},
+                new State{ID="VA",name="Virginia"},
+                new State{ID="WA",name="Washington"},
+                new State{ID="WV",name="West Virginia"},
+                new State{ID="WI",name="Wisconsin"},
+                new State{ID="WY",name="Wyoming"},
+            };
+            try
+            {
+                if (!context.States.Any())
+                {
+                    foreach (State o in stlist)
+                    {
+                        context.States.Add(o);
+                    }
+                    context.SaveChanges();
+                }
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+        public static void getParks(ApplicationDbContext context)
+        {
+            
             if (context.Parks.Any())
             {
                 return;
@@ -62,9 +136,23 @@ namespace DISFinalProject.Data
                             fullName = (string)jsonpark["fullName"],
                             parkCode = (string)jsonpark["parkCode"],
                             description = (string)jsonpark["description"],
-                            states = (string)jsonpark["states"]
                         };
                         context.Parks.Add(p);
+                        string[] states = ((string)jsonpark["states"]).Split(",");
+                        foreach(string s in states)
+                        {
+                            State st = context.States.Where(c => c.ID == s).FirstOrDefault();
+                            if(st != null)
+                            {
+                                StatePark sp = new StatePark()
+                                {
+                                    state = st,
+                                    park = p
+                                };
+                                context.StateParks.Add(sp);
+                                context.SaveChanges();
+                            }
+                        }
                         JArray activities = (JArray)jsonpark["activities"];
                         if(activities.Count != 0)
                         {
