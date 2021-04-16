@@ -21,7 +21,7 @@
                     <li><a asp-controller="Home" asp-action="Index"><i class="material-icons left">home</i></a></li>
                     <li><a asp-controller="Park" asp-action="Create">Create New</a></li>
                     <li><a asp-controller="Park" asp-action="Search"><i class="material-icons left">search</i>Search Park</a></li>
-                    <li><a asp-controller="Home" asp-action="Explore">Explore the Data</a></li>
+                    <li><a asp-controller="Park" asp-action="Explore">Explore the Data</a></li>
                     <li><a asp-controller="Home" asp-action="Model">Data Model</a></li>
                 </ul>
             </div>
@@ -30,7 +30,7 @@
             <li><a asp-controller="Home" asp-action="Index">Home</a></li>
             <li><a asp-controller="Park" asp-action="Create">Create New</a></li>
             <li><a asp-controller="Park" asp-action="Search">Search Park</a></li>
-            <li><a asp-controller="Home" asp-action="Explore">Explore the Data</a></li>
+            <li><a asp-controller="Park" asp-action="Explore">Explore the Data</a></li>
             <li><a asp-controller="Home" asp-action="Model">Data Model</a></li>
         </ul>
     </header>
@@ -73,5 +73,8 @@
     <script type="text/javascript" src="@Url.Content("~/js/jquery-3.6.0.min.js")"></script>
     <script type="text/javascript" src="@Url.Content("~/js/materialize.js")"></script>
     <script type="text/javascript" src="@Url.Content("~/js/site.js")"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    @RenderSection("chart",false)
+    @RenderSection("carousel", false)
 </body>
 </html>
