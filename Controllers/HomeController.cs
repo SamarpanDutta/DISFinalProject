@@ -11,12 +11,15 @@ namespace DISFinalProject.Controllers
 {
     public class HomeController : Controller
     {
-        //private readonly ILogger<HomeController> _logger;
+        public IActionResult Model()
+        {
+            return View();
+        }
 
-        //public HomeController(ILogger<HomeController> logger)
-        //{
-        //    _logger = logger;
-        //}
+        public IActionResult Aboutus()
+        {
+            return View();
+        }
 
         public IActionResult Index()
         {

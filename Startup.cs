@@ -28,6 +28,13 @@ namespace DISFinalProject
             services.AddControllersWithViews();
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DISFinalProjectContext")));
             services.AddDatabaseDeveloperPageExceptionFilter();
+            services.AddRazorPages()
+                .AddMvcOptions(options =>
+                {
+                    options.MaxModelValidationErrors = 50;
+                    options.ModelBindingMessageProvider.SetValueMustNotBeNullAccessor(
+                        _ => "The field is required.");
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

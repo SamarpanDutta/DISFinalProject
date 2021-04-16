@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
@@ -67,12 +68,20 @@ namespace DISFinalProject.Models
     public class CreatePark
     {
         public string ID { get; set; }
+        [Required]
+        [Url]
         public string url { get; set; }
+        [Required]
         public string fullName { get; set; }
+        [Required]
         public string parkCode { get; set; }
+        [Required]
         public string description { get; set; }
+        [Required]
         public ICollection<string> statenames { get; set; }
+        [Required]
         public ICollection<string> activitynames { get; set; }
+        [Required]
         public ICollection<string> topicnames { get; set; }
     }
 }

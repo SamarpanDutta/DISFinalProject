@@ -24,15 +24,24 @@ namespace DISFinalProject.Controllers
             topicname = (topicname == null) ? "" : topicname;
             parkname = (parkname == null) ? "" : parkname;
 
-            List<Park> plist = await _context.Parks
-                .Include(p => p.activities)
-                .Include(p => p.topics)
-                .Include(p => p.states)
-                .Where(p => p.activities.Any(s => s.activity.name.Contains(activityname)))
-                .Where(p => p.topics.Any(s => s.topic.name.Contains(topicname)))
-                .Where(p => p.states.Any(s => s.state.ID.Contains(statename)))
-                .Where(p => p.fullName.Contains(parkname))
-                .ToListAsync();
+            List<Park> plist = new List<Park>();
+            if (statename == "" && activityname == "" && topicname  == "" && parkname == "")
+            {
+                plist = await _context.Parks.Include(p => p.states).ToListAsync();
+            }
+            else
+            {
+                plist = await _context.Parks
+                            .Include(p => p.activities)
+                            .Include(p => p.topics)
+                            .Include(p => p.states)
+                            .Where(p => p.activities.Any(s => s.activity.name.Contains(activityname)))
+                            .Where(p => p.topics.Any(s => s.topic.name.Contains(topicname)))
+                            .Where(p => p.states.Any(s => s.state.ID.Contains(statename)))
+                            .Where(p => p.fullName.Contains(parkname))
+                            .ToListAsync();
+            }
+
 
             Dictionary<string, string> dict = new Dictionary<string, string>();
             foreach(State i in _context.States)
@@ -133,6 +142,17 @@ namespace DISFinalProject.Controllers
                     "Try again, and if the problem persists " +
                     "see your system administrator.");
             }
+
+            Dictionary<string, string> dict = new Dictionary<string, string>();
+            foreach (State i in _context.States)
+            {
+                dict.Add(i.ID, i.name);
+            }
+            List<string> tn = await _context.Topics.Select(p => p.name).ToListAsync();
+            List<string> an = await _context.Activities.Select(p => p.name).ToListAsync();
+            ViewBag.tnames = tn;
+            ViewBag.anames = an;
+            ViewBag.statedict = dict;
             return View(newp);
         }
 
@@ -258,7 +278,7 @@ namespace DISFinalProject.Controllers
                     _context.Update(ptobeupdated);
                     await _context.SaveChangesAsync();
                     return RedirectToAction(nameof(Thanks),new { message = "Thanks! The record has been edited." });
-                }             
+                }  
             }
             catch (DbUpdateException /* ex */)
             {
@@ -267,6 +287,17 @@ namespace DISFinalProject.Controllers
                     "Try again, and if the problem persists " +
                     "see your system administrator.");
             }
+            Dictionary<string, string> dict = new Dictionary<string, string>();
+            foreach (State i in _context.States)
+            {
+                dict.Add(i.ID, i.name);
+            }
+            List<string> anames = await _context.Activities.Select(p => p.name).ToListAsync();
+            List<string> tnames = await _context.Topics.Select(p => p.name).ToListAsync();
+
+            ViewBag.statedict = dict;
+            ViewBag.anames = anames;
+            ViewBag.tnames = tnames;
             return View(modifiedp);
         }
     
