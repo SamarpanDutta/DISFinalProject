@@ -17,18 +17,18 @@
             </div>
             <div class="row">
                 <form>
-                    <div class="input-field col m12 center-align">
-                        <select ID="activities">
-                            <option value="All" selected>All Activities</option>
-                            @foreach (var item in ViewBag.adict.Keys)
+                        <div class="input-field col m12 center-align">
+                            <select ID="activities">
+                                <option value="All" selected>All Activities</option>
+                                @foreach (var item in ViewBag.adict.Keys)
                             {
                                 <option value="@item">@ViewBag.adict[item]</option>
                             }
-                        </select>
-                        <label>Activity</label>
-                    </div>
-                </form>
-            </div>
+                            </select>
+                            <label>Activity</label>
+                        </div>
+                    </form>
+</div>
         </div>
     </div>
 </div>

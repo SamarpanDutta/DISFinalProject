@@ -6316,11 +6316,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ramar\\Source\\Repos\\DISFinalProject\\DISFinalProject.csproj",
+      "projectUniqueName": "C:\\Users\\ramar\\Source\\Repos\\SamarpanDutta\\DISFinalProject\\DISFinalProject.csproj",
       "projectName": "DISFinalProject",
-      "projectPath": "C:\\Users\\ramar\\Source\\Repos\\DISFinalProject\\DISFinalProject.csproj",
+      "projectPath": "C:\\Users\\ramar\\Source\\Repos\\SamarpanDutta\\DISFinalProject\\DISFinalProject.csproj",
       "packagesPath": "C:\\Users\\ramar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ramar\\Source\\Repos\\DISFinalProject\\obj\\",
+      "outputPath": "C:\\Users\\ramar\\Source\\Repos\\SamarpanDutta\\DISFinalProject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ramar\\AppData\\Roaming\\NuGet\\NuGet.Config",
