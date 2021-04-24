@@ -6311,25 +6311,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kotha\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\ramar\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kotha\\Source\\Repos\\DISFinalProject\\DISFinalProject.csproj",
+      "projectUniqueName": "C:\\Users\\ramar\\Source\\Repos\\DISFinalProject\\DISFinalProject.csproj",
       "projectName": "DISFinalProject",
-      "projectPath": "C:\\Users\\kotha\\Source\\Repos\\DISFinalProject\\DISFinalProject.csproj",
-      "packagesPath": "C:\\Users\\kotha\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kotha\\Source\\Repos\\DISFinalProject\\obj\\",
+      "projectPath": "C:\\Users\\ramar\\Source\\Repos\\DISFinalProject\\DISFinalProject.csproj",
+      "packagesPath": "C:\\Users\\ramar\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ramar\\Source\\Repos\\DISFinalProject\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\kotha\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\ramar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -6385,7 +6380,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }
