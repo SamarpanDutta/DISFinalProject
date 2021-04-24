@@ -1,21 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\samar\\source\\repos\\DISFinalProject\\DISFinalProject.csproj": {}
+    "C:\\Users\\kotha\\Source\\Repos\\DISFinalProject\\DISFinalProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\samar\\source\\repos\\DISFinalProject\\DISFinalProject.csproj": {
+    "C:\\Users\\kotha\\Source\\Repos\\DISFinalProject\\DISFinalProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\samar\\source\\repos\\DISFinalProject\\DISFinalProject.csproj",
+        "projectUniqueName": "C:\\Users\\kotha\\Source\\Repos\\DISFinalProject\\DISFinalProject.csproj",
         "projectName": "DISFinalProject",
-        "projectPath": "C:\\Users\\samar\\source\\repos\\DISFinalProject\\DISFinalProject.csproj",
-        "packagesPath": "C:\\Users\\samar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\samar\\source\\repos\\DISFinalProject\\obj\\",
+        "projectPath": "C:\\Users\\kotha\\Source\\Repos\\DISFinalProject\\DISFinalProject.csproj",
+        "packagesPath": "C:\\Users\\kotha\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kotha\\Source\\Repos\\DISFinalProject\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\samar\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\kotha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -71,7 +75,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }
